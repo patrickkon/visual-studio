@@ -14,7 +14,7 @@ public:
 	typedef T value_type;
 
 	vec() { create(); }
-		//version 2
+		//version 2. somehow def outside of class doenst work
 	template<class id> vec(id begin, id end) {
 		data = alloc.allocate(end - begin);
 		//data = operator new vec<T>(sizeof(T) *(end - begin));
@@ -22,11 +22,11 @@ public:
 
 	}
 
-	
-
 	explicit vec(const size_t& t, const T& val = T()) { create(t, val); }
 vec(const vec& v) { create(v.begin(), v.end()); }
 	~vec() { uncreate(); }
+
+
 
 	void push_back(const T& t);
 	iterator erase(iterator );

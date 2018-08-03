@@ -1,0 +1,2 @@
+int intlength(const double&);
+

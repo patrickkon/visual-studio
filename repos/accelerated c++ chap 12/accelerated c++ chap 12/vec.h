@@ -1,3 +1,6 @@
+#ifndef yolosir
+#define yolosir
+
 #define _SCL_SECURE_NO_WARNINGS  
 #include<memory>
 #include<algorithm>
@@ -14,7 +17,8 @@ public:
 	typedef T value_type;
 
 	vec() { create(); }
-		//version 2. somehow def outside of class doenst work
+		
+	//version 2. somehow def outside of class doenst work
 	template<class id> vec(id begin, id end) {
 		data = alloc.allocate(end - begin);
 		//data = operator new vec<T>(sizeof(T) *(end - begin));
@@ -26,7 +30,14 @@ public:
 vec(const vec& v) { create(v.begin(), v.end()); }
 	~vec() { uncreate(); }
 
+	void assign(T*arr, size_t s) {
+		//size_t size = sizeof(arr) / sizeof(*arr);
+		fakelimit = data = new T[s];
+		limit = data + s;
+		std::copy(arr, (arr + s ), std::back_inserter(*this));
+	}
 
+	
 
 	void push_back(const T& t);
 	iterator erase(iterator );
@@ -218,3 +229,9 @@ template<class T> vec<T> operator+ (const vec<T>& v1, const vec<T>& v2) {
 	std::copy(v2.begin(), v2.end(), std::back_inserter(temp));
 	return temp;
 }
+
+
+
+
+
+#endif

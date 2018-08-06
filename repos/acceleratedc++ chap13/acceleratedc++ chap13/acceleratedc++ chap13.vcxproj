@@ -147,17 +147,29 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="core.h" />
+    <ClInclude Include="grad.h" />
+    <ClInclude Include="graderange.h" />
+    <ClInclude Include="median.h" />
+    <ClInclude Include="passfailclass q9.5-9.6.h" />
     <ClInclude Include="stdafx.h" />
+    <ClInclude Include="student_info.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="acceleratedc++ chap13.cpp" />
+    <ClCompile Include="funcDef_chap13.cpp" />
+    <ClCompile Include="graderange.cpp" />
+    <ClCompile Include="lettergrade.cpp" />
+    <ClCompile Include="median.cpp" />
+    <ClCompile Include="passfailclass q9.5-9.6.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="student_info.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

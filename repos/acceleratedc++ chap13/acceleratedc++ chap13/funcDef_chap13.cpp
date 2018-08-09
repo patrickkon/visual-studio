@@ -28,15 +28,10 @@ istream& core::read(istream&is) {
 	return is;
 }
 
-istream& core::read(istream&is) {
-	is >> name >> midterm >> final;
-	read_hw(is, homework);
 
-	return is;
-}
 
 istream& grad::read(istream&is) {
-	core::read(is);
+	is >> name >> midterm >> final;
 	is >> thesis;
 	read_hw(is, homework);
 
@@ -51,4 +46,10 @@ double core::grade() const {
 
 	double dude = median(homework);
 	return ::grade(midterm, final, dude);
+}
+
+double grad::grade() const {
+
+	double dude = core::grade();
+	return std::min(dude, thesis);
 }

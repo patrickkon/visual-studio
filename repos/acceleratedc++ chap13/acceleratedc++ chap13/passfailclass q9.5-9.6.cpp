@@ -5,7 +5,7 @@
 #include<algorithm>
 using namespace std;
 bool student_info::pass() const{
-	return (midterm + final) / 2 > 60;
+	return ((*cp).midterm + (*cp).final) / 2 > 60;
 }
 
 bool strcomp(const string& x, const string& y) {

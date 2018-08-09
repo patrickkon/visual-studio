@@ -5,14 +5,18 @@
 #include <string>
 //DID NOT INCLUDE STRING! MIGHT CAUSE PROBLEMS? yup >> next to "is" , in this .cpp source file would not work.
 class core {
+	friend class student_info;
 public:
-	core() {};
+	core() :midterm(0),final(0) {};
 	core(std::istream&cin) { read(cin); }
+
+	virtual ~core() {};
+	
 
 	std::string findname() const { return name; }
 	virtual std::istream& read(std::istream&);
-	double grade()const;
-	double showgrade()const { return finalgrade; }
+	virtual double grade()const;
+	//double showgrade()const { return finalgrade; }
 	bool valid() const { return !homework.empty(); }
 	//std::string errorstate;
 	//bool pass() const;
@@ -20,14 +24,11 @@ protected:
 	std::string name;
 	double midterm, final;
 	std::vector<double> homework;
-	double finalgrade;
+	virtual core* clone() { return new core(*this); }
+
+	//double finalgrade;
 	//std::istream& read_hw(std::istream &, std::vector<double>&);
 };
-
-
-
-
-bool compare(const student_info&, const student_info&);
 
 
 #endif

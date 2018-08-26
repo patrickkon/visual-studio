@@ -16,9 +16,11 @@ public:
 	//i THINK i can leave destructor blank since it will know how to call delete pointer?
 	~student_info() {};
 	
-	std::string findname() const { if (cp) return (*cp).name; else throw std::runtime_error("uninitialized student"); }
+	std::string findname() const { if (cp) return (*cp).findname(); else throw std::runtime_error("uninitialized student"); }
 	std::istream& read(std::istream&);
 	double grade()const;
+	std::string letter_grade();
+
 	//double showgrade()const { return finalgrade; }
 	//bool valid() const { return !homework.empty(); }
 	//std::string errorstate;

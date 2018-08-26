@@ -7,8 +7,8 @@
 //DID NOT INCLUDE STRING! MIGHT CAUSE PROBLEMS? yup >> next to "is" , in this .cpp source file would not work.
 class grad : public core{
 public:
-	grad() :thesis(0){};
-	grad(std::istream&cin) { read(cin); }
+	grad() :thesis(0) { std::cerr << "grad() default constructor" << std::endl; }
+	grad(std::istream&cin) { std::cerr << "grad::grad(istream) " << std::endl; read(cin); }
 
 	std::istream& read(std::istream&);
 	double grade()const;

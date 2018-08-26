@@ -45,11 +45,15 @@ double grade(double midterm, double finals, double median) {
 double core::grade() const {
 
 	double dude = median(homework);
+	//std::cerr << "core::grade" << std::endl;
 	return ::grade(midterm, final, dude);
 }
 
 double grad::grade() const {
-
+	//in this case, cerr will output first. but in the case of grad(istream) constructor, it will automatically 
+	//call core default constructor first before outputting cerr
+	//std::cerr << "grad::grade" << std::endl;
 	double dude = core::grade();
+	
 	return std::min(dude, thesis);
 }

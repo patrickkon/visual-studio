@@ -7,13 +7,13 @@
 class core {
 	friend class student_info;
 public:
-	core() :midterm(0),final(0) {};
-	core(std::istream&cin) { read(cin); }
+	core() :midterm(0),final(0) { /*std::cerr << "core() default constructor" << std::endl;*/ }
+	core(std::istream&cin) { /*std::cerr << "core::core(istream)" << std::endl;*/ read(cin); }
 
 	virtual ~core() {};
 	
 
-	std::string findname() const { return name; }
+	std::string findname() const { /*std::cerr << "string(findname)" << std::endl*/; return name; }
 	virtual std::istream& read(std::istream&);
 	virtual double grade()const;
 	//double showgrade()const { return finalgrade; }

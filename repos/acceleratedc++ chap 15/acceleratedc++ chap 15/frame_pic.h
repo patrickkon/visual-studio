@@ -26,29 +26,24 @@ void frame_pic::display(std::ostream& os, row n, bool yes_pad, const ptr<frame_o
 	 char b = '*';
 	 char l = '*';
 	 char r = '*';
-	try {
-		if (framechange2) {
+	 //this condition is needed because if this frame_pic wasnt the one reframed, but the 
+	 // main picture that it is part of is reframed. then we can pass from main to here, and change its value
+		if ((frame_change)) {
+			t = frame_change->tp;
+			b = frame_change->btm;
+			r = frame_change->rh;
+			l = frame_change->lf;
+		} else if (framechange2) {
 			t = framechange2->tp;
 			b = framechange2->btm;
 			r = framechange2->rh;
 			l = framechange2->lf;
 		}
-		else
-		if (*(frame_change)) {
-			t = frame_change->tp;
-			b = frame_change->btm;
-			r = frame_change->rh;
-			l = frame_change->lf;
-		}
-	}
-	catch (std::runtime_error) {};
-
-	//if (frame_opt::operator bool) { t = frame_opt::tp; }
 	if (n >= height()) { if (yes_pad) pad(os, 0, width()); }
 	else {
 		
 		if (n == 0 || n == height() - 1) { os << std::string(width(),t); }
-		//not sure if os << single brackets works
+		//not sure if os << single brackets works. ans works
 		else if (n == 1 || n == height() - 2) { os << l; pad(os, 1, width() - 1); os << r; }
 		else {
 			os << l <<" ";

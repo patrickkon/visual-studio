@@ -25,7 +25,7 @@ public:
 private:
 	picture( base_pic* pic) :p(pic) { }
 	ptr<base_pic> p;
-	ptr<frame_opt> framechange;
+	
 };
 
 
@@ -45,13 +45,7 @@ picture vcat(const picture& x, const picture& y) {
 
 std::ostream& operator<< (std::ostream& os, const picture& pic) {
 	for (base_pic::row sz = 0; sz != pic.p->height(); sz++) {
-		try {
-			if (*(pic.framechange)) pic.p->display(os, sz, false, /*pic.framechange*/0);
-		}
-		catch(std::runtime_error v){
-			pic.p->display(os, sz, false, 0);
-			
-		}
+		pic.p->display(os, sz, false, 0);
 		os << std::endl;
 	}
 	return os;

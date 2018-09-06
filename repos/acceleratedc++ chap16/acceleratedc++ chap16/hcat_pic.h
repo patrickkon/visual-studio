@@ -28,11 +28,16 @@ void hcat_pic::display(std::ostream& os, row n, bool yes_pad, const ptr<frame_op
 		if (n != 0) n2 = n - 1;
 		else n2 = height();
 	}
-	else {
+	else if(left->height()<right->height()){
 		n2 = n;
 		//if n==0 , some variable will not be initialized 
 		if (n != 0)n1 = n - 1;
 		else n1 = height();
+	}
+	else
+	{
+		n2 = n;
+		n1 = n;
 	}
 		
 	if (framechange2) {

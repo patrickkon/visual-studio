@@ -21,31 +21,37 @@
     <ClInclude Include="targetver.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ptr.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="base_pic.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="picture.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="string_pic.h">
+    <ClInclude Include="core.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="frame_pic.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="grad.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="hcat_pic.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="median.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="picture.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ptr.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="string_pic.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="student_info.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="vcat_pic.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="str.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="vec.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -53,10 +59,19 @@
     <ClCompile Include="stdafx.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="acceleratedc++ chap 15.cpp">
+    <ClCompile Include="acceleratedc++ chap16.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="funcDef_chap13.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="median.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="ptr.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="student_info.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
